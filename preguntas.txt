@@ -1,3 +1,18 @@
 porque esto crea un bucle:         <Square value={squares[0]} onSquareClick={handleClick(0)} />
 y esto lo evita?         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
 PORQUE ESTO: setHistory([...history, nextSquares]); QUE SIGNIFICA?
+
+QUE HACE EL SquareS?
+const moves = history.map((squares, move) => {
+    let description;
+    if (move > 0) {
+      description = 'Go to move #' + move;
+    } else {
+      description = 'Go to game start';
+    }
+    return (
+      <li key={move}>
+        <button onClick={() => jumpTo(move)}>{description}</button>
+      </li>
+    );
+  });

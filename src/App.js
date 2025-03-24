@@ -65,9 +65,15 @@ export default function Game() {
   }
 
   function jumpTo(nextMove) {
+    // Recorta el historial hasta el movimiento seleccionado
+    const trimmedHistory = history.slice(0, nextMove + 1);
+    setHistory(trimmedHistory);
+    
+    // Actualiza el movimiento actual
     setCurrentMove(nextMove);
   }
-
+  
+    // Porque incluimos el squares?
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
