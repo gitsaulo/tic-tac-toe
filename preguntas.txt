@@ -1,0 +1,3 @@
+porque esto crea un bucle:         <Square value={squares[0]} onSquareClick={handleClick(0)} />
+y esto lo evita?         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+PORQUE ESTO: setHistory([...history, nextSquares]); QUE SIGNIFICA?
